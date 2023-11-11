@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundpic">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <Button
+        android:id="@+id/lianbiao"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:background="@drawable/node"
+        tools:ignore="MissingConstraints"
+        android:text="链表"
+        android:layout_centerInParent="true"/>
+
+    <Button
+        android:id="@+id/queue"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_below="@id/lianbiao"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="46dp"
+        android:layout_marginTop="11dp"
+        android:layout_toRightOf="@id/lianbiao"
+        android:background="@drawable/node"
+        android:text="队列"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/stack"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_above="@id/queue"
+        android:layout_marginLeft="45dp"
+        android:layout_marginBottom="63dp"
+        android:layout_toRightOf="@id/lianbiao"
+        android:background="@drawable/node"
+        android:text="栈"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/array"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_above="@id/stack"
+        android:layout_marginLeft="81dp"
+        android:layout_marginBottom="58dp"
+        android:layout_toRightOf="@id/lianbiao"
+        android:background="@drawable/node"
+        android:text="数组"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/search"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_above="@id/lianbiao"
+        android:layout_marginRight="48dp"
+        android:layout_marginBottom="-11dp"
+        android:layout_toLeftOf="@id/lianbiao"
+        android:background="@drawable/node_2"
+        android:text="查找"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/sort"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_below="@id/lianbiao"
+        android:layout_marginTop="-7dp"
+        android:layout_marginRight="57dp"
+        android:layout_toLeftOf="@id/lianbiao"
+        android:background="@drawable/node_2"
+        android:text="排序"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/timecpl"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_above="@id/search"
+        android:layout_toRightOf="@id/search"
+        android:background="@drawable/node_3"
+        android:text="时间复杂度"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/spacecpl"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_below="@id/sort"
+        android:layout_toRightOf="@id/sort"
+        android:background="@drawable/node_3"
+        android:text="空间复杂度"
+        tools:ignore="MissingConstraints" />
+</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:weightSum="3"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="120dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp">
+            <RelativeLayout
+                android:background="@drawable/layoutchange"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="mapOnclick1">
+
+                <ImageView
+                    android:id="@+id/img1"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/img_9" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/img1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="首页" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:onClick="mapOnclick2"
+                android:background="@drawable/day_bg"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/img2"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
+                    android:background="@drawable/img_10" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/img2"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="知识图谱"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:onClick="mapOnclick3"
+                android:background="@drawable/layoutchange"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/img3"
+                    android:layout_width="33dp"
+                    android:layout_height="33dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="13dp"
+                    android:background="@drawable/img_5" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/img3"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:text="我的" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".zhuceActivity"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/et1_register_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入用户名(六个字母以上)"
+        android:layout_marginTop="30dp"/>
+    <EditText
+        android:id="@+id/et2_register_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入密码（六个字母以上）"
+        android:layout_marginTop="30dp"/>
+    <EditText
+        android:id="@+id/et3_register_confirmPassw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请确认密码"
+        android:layout_marginTop="30dp"/>
+    <Button
+        android:id="@+id/bt1_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="确认注册"
+        android:layout_gravity="center"/>
+    <Button
+        android:id="@+id/bt1_register22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="查看（临时）"
+        android:layout_gravity="center"/>
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

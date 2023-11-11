@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/sunny_bg">
+        <TextView
+            android:id="@+id/words5"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="《红楼梦》人物关系知识图谱"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/blue"></TextView>
+        <TextView
+            android:id="@+id/words6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="本项目构建了《红楼梦》中的各人物以及他们之间的人物关系的知识图谱。主要包括四部分工作：（1）数据获取与预处理；（2）命名实体识别；（3）实体关系抽取；（4）可视化与知识问答"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"></TextView>
+
+        <ImageView
+            android:id="@+id/words7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_22"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"></ImageView>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

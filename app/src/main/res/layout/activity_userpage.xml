@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background_2">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <ImageView
+                    android:id="@+id/iv_personal_icon"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/img_12"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="20dp"/>
+
+                <Button
+                    android:id="@+id/btn_change"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="修改头像"
+                    android:textColor="#4661FA"
+                    android:layout_marginLeft="25dp"
+                    android:background="@drawable/roundbutton_2">
+                </Button>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Riu"
+                    android:textSize="30dp"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="20dp"></TextView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="大二"
+                    android:textSize="20dp"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="20dp"></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <Button
+                    android:onClick="editOnclick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="编辑信息"
+                    android:layout_marginTop="140dp"
+                    android:layout_marginLeft="80dp"
+                    android:background="@drawable/roundbutton_2"
+                    android:textColor="#4661FA"></Button>
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/wronganswer"
+            android:layout_height="100dp"
+            android:layout_width="match_parent"
+            android:background="@drawable/button"
+            android:drawableLeft="@drawable/button_pic"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="错 题 本"
+            android:onClick="wOnclick"
+
+            android:textColor="@color/black"
+            android:textSize="30sp" >
+        </Button>
+
+        <Button
+            android:id="@+id/uploadquestion"
+            android:layout_height="100dp"
+            android:layout_width="match_parent"
+            android:background="@drawable/button"
+            android:drawableLeft="@drawable/button_pic3"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="上传题目"
+            android:onClick="uOnclick"
+            android:textColor="@color/black"
+            android:textSize="30sp" >
+        </Button>
+
+        <Button
+            android:id="@+id/knowledge"
+            android:layout_height="100dp"
+            android:layout_width="match_parent"
+            android:background="@drawable/button"
+            android:drawableLeft="@drawable/button_pic2"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="认知诊断"
+            android:textColor="@color/black"
+            android:onClick="rOnclick"
+            android:textSize="30sp" >
+        </Button>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:weightSum="3"
+                android:orientation="horizontal"
+                android:background="@color/white"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="60dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+                <RelativeLayout
+                    android:background="@drawable/layoutchange"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="userOnclick1">
+
+                    <ImageView
+                        android:id="@+id/img1"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/img_9" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/img1"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="首页" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:background="@drawable/layoutchange"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="userOnclick2">
+
+                    <ImageView
+                        android:id="@+id/img2"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/img_19" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/img2"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="知识图谱"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:background="@drawable/day_bg"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/img3"
+                        android:layout_width="33dp"
+                        android:layout_height="33dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="13dp"
+                        android:background="@drawable/img_20" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/img3"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:text="我的" />
+                </RelativeLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

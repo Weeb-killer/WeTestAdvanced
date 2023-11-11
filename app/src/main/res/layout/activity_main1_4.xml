@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="基于cnScheme的外国文学研究领域知识图谱"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/blue"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1.基于开放域数据CNKI的12833 篇研究文献作为语料来源，将文献中的关键词作为主题关键词，作者作为研究人员。通过爬虫爬取结构化数据作为知识图谱基本数据，结合爬取一些自然语言数据与半结构化数据，并进行语义抽取构建了外国文学研究领域的核心数据"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2.在上述基础上，我们进行了实体对齐与部分的实体消歧，比如译名的对齐：列夫·托尔斯泰 和 托尔斯泰 指的是同一个实体，要对数据库出现的不同的译名、相同的实体对齐。"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"></TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3.基于cnSchema的核心classes与properties进行了相关扩展，最终形成了基于cnScheme的外国文学研究领域知识图谱"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"></TextView>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

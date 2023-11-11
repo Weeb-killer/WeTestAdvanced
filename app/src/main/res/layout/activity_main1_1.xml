@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/words1"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="中文医学知识图谱CMeKG2.0版发布"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/blue"></TextView>
+    <TextView
+        android:id="@+id/words2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="北京大学计算语言学研究所、郑州大学自然语言处理实验室与鹏城实验室人工智能研究中心智慧医疗课题组联合发布"
+        android:textSize="20dp"
+        tools:ignore="MissingConstraints"
+        android:textColor="@color/black"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"></TextView>
+    <TextView
+        android:id="@+id/words3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CMeKG（Chinese Medical Knowledge Graph）是利用自然语言处理与文本挖掘技术，基于大规模医学文本数据，以人机结合的方式研发的中文医学知识图谱。CMeKG的构建参考了ICD、ATC、SNOMED、MeSH等权威的国际医学标准以及规模庞大、多源异构的临床指南、行业标准、诊疗规范、医学教材与医学百科等医学文本信息。"
+        android:textSize="20dp"
+        tools:ignore="MissingConstraints"
+        android:textColor="@color/black"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"></TextView>
+    <ImageView
+        android:id="@+id/words4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/img_24"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"></ImageView>
+</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

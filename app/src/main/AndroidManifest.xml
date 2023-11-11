@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/outsidelogo"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Cognitive_diagnosis_app"
+        tools:targetApi="31">
+        <activity
+            android:name=".KnowlegdeMapDetail"
+            android:exported="false" />
+        <activity
+            android:name=".logo"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".zhuceActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".UserActivity"
+            android:exported="true" />
+        <activity
+            android:name=".FirstGradeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".KnowledgemapActivity"
+            android:exported="true" />
+        <activity
+            android:name=".PracticeActicity"
+            android:exported="true" />
+        <activity
+            android:name=".wrongtitlebook"
+            android:exported="true" />
+        <activity
+            android:name=".UploadActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ResultActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SecondGradeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ThirdGradeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".FourthGradeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".FifthGradeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".SixthGradeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".EditActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Chapter1_1Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Chapter1_2Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Chapter1_3Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Chapter2_1Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Chapter2_2Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Chapter3_1Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Chapter3_2Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Chapter4_1Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Chapter4_2Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Chapter4_3Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Chapter4_4Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Chapter5_1Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Chapter5_2Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Chapter6_1Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Chapter6_2Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Chapter6_3Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Chapter6_4Activity"
+            android:exported="true" />
+        <activity
+            android:name=".zonghelianxi"
+            android:exported="true" />
+        <activity
+            android:name=".Main1_1Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Main1_2Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Main1_3Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Main1_4Activity"
+            android:exported="true" />
+    </application>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+</manifest>

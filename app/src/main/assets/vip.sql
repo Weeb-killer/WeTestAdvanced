@@ -1,4 +1,5 @@
 drop table if exists timutimu;
+drop table if exists stack;
 create table timutimu(id integer primary key AUTOINCREMENT,
                             content VARCHAR(255),option_A VARCHAR(255),option_B VARCHAR(255),
                             option_C VARCHAR(255),option_D VARCHAR(255),correct_ot integer,
@@ -11,6 +12,27 @@ create table timutimu(id integer primary key AUTOINCREMENT,
                             'array' int(1),
                             'tree' int(1),
                             'graph' int(1));
+
+create table stack(id integer primary key AUTOINCREMENT,
+                            content VARCHAR(255),option_A VARCHAR(255),option_B VARCHAR(255),
+                            option_C VARCHAR(255),option_D VARCHAR(255),correct_ot integer,
+                            explanation VARCHAR(255));
+
+insert into stack(content,option_A,option_B,option_C,option_D,correct_ot,explanation) values
+            ('链栈与顺序栈相比，比较明显的优点是()',
+            'A.插入操作更加方便',
+            'B.删除操作更加方便',
+            'C.入栈时不需要扩容',
+            'D.我不到啊',3,
+            'C.入栈时不需要扩容 每次入栈相当于链表中头插一个节点，没有扩容一说'),
+
+            ('下面关于栈和队列的说法中错误的是()',
+            'A.队列和栈通常都使用链表实现',
+            'B.队列和栈都可以从两端插入、删除数据',
+            'C.队列和栈都不支持随机访问和随机插入',
+            'D.队列是"先入先出"，栈是"先入后出"',1,
+            'A.队列和栈通常都使用链表实现 栈是尾部插入和删除，一般使用顺序表实现，队列是头部删除尾部插入，一般使用链表实现');
+
 insert into timutimu(content,option_A,option_B,option_C,option_D,correct_ot,explanation,
             Search_Algorithm,sorting_algorithm,Link_List,queue,stack,array,tree,graph) values
             ('对于一个头指针为head的带头结点的单链表，判定该表为空表的条件是()',

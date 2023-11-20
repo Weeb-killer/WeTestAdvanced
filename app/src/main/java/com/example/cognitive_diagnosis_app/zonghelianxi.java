@@ -32,6 +32,14 @@ public class zonghelianxi extends Activity {
     private int current;//当前做题位置
     private boolean wrongMode;//错题
 
+    /*
+    加入题目按这个来
+    数据库的命令在vip.sql
+    DBService是自创的模块 作为调用sql语句的api
+    对每一个要加题目的part 都新建一个DBService 但数据库只有一个
+    直接在原有的数据库里面添加新的表
+            by Weeb-killer
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_zonghelianxi);

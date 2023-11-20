@@ -10,6 +10,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
 public class logo extends AppCompatActivity {
+    //logo页面动画
     private static int SPLASH_TIME_OUT=2000;
 
     Animation fade;

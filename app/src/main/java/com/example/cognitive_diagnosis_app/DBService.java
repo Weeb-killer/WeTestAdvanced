@@ -9,16 +9,40 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.net.Socket;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 
 public class DBService {
+    File saveFile;
     private SQLiteDatabase db;
     public DBService(){
         db=SQLiteDatabase.openDatabase("/data/data/com.example.cognitive_diagnosis_app/databases/student.db",null,SQLiteDatabase.OPEN_READWRITE);
     }
+
+
+    //为了发csva
+    class MyThread extends Thread{
+
+        // 步骤2：复写run（），内容 = 定义线程行为
+        public MyThread(){}
+        @Override
+        public void run(){
+            sendcsva();
+            // 定义的线程行为
+        }
+    }
+
+    // 步骤3：创建线程对象，即 实例化线程类
+    MyThread mt=new MyThread();
+
+
     @SuppressLint("Range")
     public List<question> getQuestion(){
         List<question> list=new ArrayList<question>();
@@ -37,6 +61,8 @@ public class DBService {
 
             Cursor cursor2=db.rawQuery("select Search_Algorithm,sorting_algorithm,Link_List,queue,stack,array,tree,graph from timutimu where id in (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",new String[]{strings[0],strings[1],strings[2],strings[3],strings[4],strings[5],strings[6],strings[7],strings[8],strings[9],strings[10],strings[11],strings[12],strings[13],strings[14]});
             ExportToCSV(cursor2,"a.csv");
+            mt.start();
+
             for(int i=0;i<ints.length;i++){
                 cursor.moveToPosition(ints[i]);
                 question ques=new question();
@@ -114,7 +140,7 @@ public class DBService {
         FileWriter fw;
         BufferedWriter bfw;
         //保存文件目录
-        File saveFile = new File("/data/data/com.example.cognitive_diagnosis_app", fileName);
+        saveFile = new File("/data/data/com.example.cognitive_diagnosis_app", fileName);
         try {
             rowCount = c.getCount();
             colCount = c.getColumnCount();
@@ -156,4 +182,36 @@ public class DBService {
         }
     }
 
+
+
+
+    //发送csva
+
+    int port;
+    private void sendcsva(){
+        try {
+            System.out.println("try send csva now");
+            Path path = null;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                path = Paths.get(saveFile.toURI());
+            }
+
+            byte[] bytes = new byte[15];
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                bytes = Files.readAllBytes(path);
+            }
+            System.out.println(bytes);
+            String content = new String(bytes);
+            System.out.println(content);
+
+            Socket socket = new Socket("10.252.157.202", 8080);
+            OutputStream outputStream = socket.getOutputStream();
+            outputStream.write(bytes);
+            System.out.println("socket a success");
+            socket.close();
+        }catch (Exception e){
+            System.out.println("a fail");
+            System.out.println(e);
+        }
+    }
 }

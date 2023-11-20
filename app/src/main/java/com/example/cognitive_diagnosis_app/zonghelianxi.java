@@ -20,6 +20,11 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.net.Socket;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -31,6 +36,21 @@ public class zonghelianxi extends Activity {
     private int count;//题目总数
     private int current;//当前做题位置
     private boolean wrongMode;//错题
+
+    File savefile;
+
+    //为了发csvb
+    class MyThread extends Thread{
+
+        // 步骤2：复写run（），内容 = 定义线程行为
+        public MyThread(){}
+        @Override
+        public void run(){
+            sendcsvb();
+            // 定义的线程行为
+        }
+    }
+    MyThread bb=new MyThread();
 
     /*
     加入题目按这个来
@@ -125,7 +145,7 @@ public class zonghelianxi extends Activity {
                     //生成csv
                     FileWriter fw;
                     BufferedWriter bfw;
-                    File savefile=new File("/data/data/com.example.cognitive_diagnosis_app","b.csv");
+                    savefile=new File("/data/data/com.example.cognitive_diagnosis_app","b.csv");
                     try{
                         fw = new FileWriter(savefile);
                         bfw = new BufferedWriter(fw);
@@ -155,6 +175,8 @@ public class zonghelianxi extends Activity {
                         e.printStackTrace();
                     }
 
+                    bb.start();
+
 
 
                     //加入错题本
@@ -175,13 +197,6 @@ public class zonghelianxi extends Activity {
                         }
 
                     }
-
-
-
-
-
-
-
 
 
                     if(wrongList.size()==0){new AlertDialog.Builder(zonghelianxi.this) //全对时
@@ -257,7 +272,6 @@ public class zonghelianxi extends Activity {
                         answer.setText("答案：C");
                     }else{answer.setText("答案：D");}
 
-
                     //若之前已经选择过，则应记录选择
                     radioGroup.clearCheck();
                     if (q.selectedAnswer != -1) {
@@ -294,6 +308,35 @@ public class zonghelianxi extends Activity {
         return wrongList;
     }
 
+    //发csv_b的方法
+    int port;
+    private void sendcsvb(){
+        try {
+            System.out.println("try send csvb now");
+            Path path = null;
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                path = Paths.get(savefile.toURI());
+            }
+
+            byte[] bytes = new byte[15];
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                bytes = Files.readAllBytes(path);
+            }
+            System.out.println(bytes);
+            String content = new String(bytes);
+            System.out.println(content);
+            Socket socket=new Socket("10.252.157.202",8080);
+            OutputStream outputStream=socket.getOutputStream();
+            outputStream.write(bytes);
+
+
+            socket.close();
+            System.out.println("send csvb success");
+        }catch (Exception e){
+            System.out.println("socket send csvb fail");
+            System.out.println(e);
+        }
+    }
 
 
 

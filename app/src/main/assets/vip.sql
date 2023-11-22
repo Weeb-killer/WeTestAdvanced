@@ -1,5 +1,6 @@
 drop table if exists timutimu;
 drop table if exists stack;
+drop table if exists queue;
 create table timutimu(id integer primary key AUTOINCREMENT,
                             content VARCHAR(255),option_A VARCHAR(255),option_B VARCHAR(255),
                             option_C VARCHAR(255),option_D VARCHAR(255),correct_ot integer,
@@ -12,6 +13,27 @@ create table timutimu(id integer primary key AUTOINCREMENT,
                             'array' int(1),
                             'tree' int(1),
                             'graph' int(1));
+
+create table queue(id integer primary key AUTOINCREMENT,
+                            content VARCHAR(255),option_A VARCHAR(255),option_B VARCHAR(255),
+                            option_C VARCHAR(255),option_D VARCHAR(255),correct_ot integer,
+                            explanation VARCHAR(255));
+
+insert into queue(content,option_A,option_B,option_C,option_D,correct_ot,explanation) values
+            ('下面关于栈和队列的说法中错误的是()',
+             'A.队列和栈通常都使用链表实现',
+             'B.队列和栈都可以从两端插入、删除数据',
+             'C.队列和栈都不支持随机访问和随机插入',
+             'D.队列是"先入先出"，栈是"先入后出"',1,
+             'A.队列和栈通常都使用链表实现 栈是尾部插入和删除，一般使用顺序表实现，队列是头部删除尾部插入，一般使用链表实现'),
+
+             ("允许对队列进行的操作有()",
+             "A.对队列中的元素排序",
+             "B.取出最近进队的元素",
+             "C.在队列元素之间插入元素",
+             "D.删除队头元素",4,
+             "D.删除队头元素 队列允许先进先出，因此可以对队头进行删除访问等操作"
+             );
 
 create table stack(id integer primary key AUTOINCREMENT,
                             content VARCHAR(255),option_A VARCHAR(255),option_B VARCHAR(255),
@@ -26,12 +48,13 @@ insert into stack(content,option_A,option_B,option_C,option_D,correct_ot,explana
             'D.我不到啊',3,
             'C.入栈时不需要扩容 每次入栈相当于链表中头插一个节点，没有扩容一说'),
 
-            ('下面关于栈和队列的说法中错误的是()',
-            'A.队列和栈通常都使用链表实现',
-            'B.队列和栈都可以从两端插入、删除数据',
-            'C.队列和栈都不支持随机访问和随机插入',
-            'D.队列是"先入先出"，栈是"先入后出"',1,
-            'A.队列和栈通常都使用链表实现 栈是尾部插入和删除，一般使用顺序表实现，队列是头部删除尾部插入，一般使用链表实现');
+            ("下列关于栈的叙述中,正确的是()",
+            "A.采用非递归方式重写递归程序时必须要使用栈",
+            "B.函数调用时，系统要用栈保存必要的信息",
+            "C.只要确定了入栈次序，即可确定出栈次序",
+            "D.栈是一种受限的线性表，允许在其两端进行操作",3,
+            "C.只要确定了入栈次序，即可确定出栈次序 如果是按照1、2、3、4的顺序入栈，可以是1、2、3、4（1进1出，2进2出，3进3出，4进4出）的顺序出栈，也可以是4、3、2、1（1进，2进，3进，4进，4出，3出，2出，1出）的顺序出栈，出栈顺序取决于pop操作和push操作的顺序。"
+            );
 
 insert into timutimu(content,option_A,option_B,option_C,option_D,correct_ot,explanation,
             Search_Algorithm,sorting_algorithm,Link_List,queue,stack,array,tree,graph) values

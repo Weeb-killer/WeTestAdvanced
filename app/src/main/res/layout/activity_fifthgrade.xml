@@ -61,17 +61,6 @@
                     android:text="5.2 二叉排序树"
                     android:textColor="@color/blue"></Button>
 
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:text="5.3"
-                    android:textColor="@color/blue"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/button">
-                </Button>
-
             </LinearLayout>
 
         </ScrollView>

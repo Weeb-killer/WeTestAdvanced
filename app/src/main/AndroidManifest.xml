@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <!--允许联网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--获取wifi网络状态的信息 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:allowBackup="true"
@@ -10,6 +15,7 @@
         android:label="@string/app_name"
         android:requestLegacyExternalStorage="true"
         android:supportsRtl="true"
+        android:name=".BmobApp"
         android:theme="@style/Theme.Cognitive_diagnosis_app"
         tools:targetApi="31">
         <activity
@@ -142,6 +148,13 @@
         <activity
             android:name=".Main1_4Activity"
             android:exported="true" />
+        <activity
+            android:name=".ChatWithAI"
+            android:exported="true" />
+        <provider
+            android:name="cn.bmob.v3.util.BmobContentProvider"
+            android:authorities="com.example.cognitive_diagnosis_app.BmobContentProvider">
+        </provider>
     </application>
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />

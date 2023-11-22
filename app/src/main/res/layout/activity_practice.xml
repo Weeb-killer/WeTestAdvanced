@@ -289,6 +289,37 @@
 
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="32dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:onClick="pOnclickAI"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/ChatWithAI"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="15dp"
+                    android:src="@mipmap/teacher"
+                    ></ImageView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/ChatWithAI"
+                    android:text="                 问问老师?"
+                    android:layout_centerHorizontal="true"
+                    ></TextView>
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
 

@@ -59,5 +59,10 @@ public class PracticeActicity extends AppCompatActivity {
         startActivity(intent);//开始activity，跳转到下一个页面
         overridePendingTransition(R.anim.activity_jump1,R.anim.activity_jump2);
     }
+    public void pOnclickAI(View view){
+        Intent intent = new Intent(PracticeActicity.this, ChatWithAI.class);
+        startActivity(intent);//开始activity，跳转到下一个页面
+        overridePendingTransition(R.anim.activity_jump1,R.anim.activity_jump2);
+    }
 
 }

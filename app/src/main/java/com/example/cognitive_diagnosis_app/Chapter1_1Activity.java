@@ -118,7 +118,7 @@ public class Chapter1_1Activity extends Activity {
                             values.put("correct_ot",stacklist.get(i).answer);
                             values.put("explanation",stacklist.get(i).explaination);
 
-                            db.insert("cuotiku",null,values);
+                            db.insert("anothercuotiku",null,values);
                         }
 
                     }
@@ -149,7 +149,7 @@ public class Chapter1_1Activity extends Activity {
                                         wrongMode=true;
                                         List<question> newList=new ArrayList<question>();
                                         //将错误题目复制到newList中
-                                        for(int i=wrongList.size()-2;i< wrongList.size();i++){ //减几就是这个题库的大小
+                                        for(int i=stacklist.size();i< wrongList.size();i++){
                                             newList.add(stacklist.get(wrongList.get(i)));
                                         }
 //

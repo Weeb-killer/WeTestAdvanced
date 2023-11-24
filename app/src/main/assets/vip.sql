@@ -14,6 +14,11 @@ create table timutimu(id integer primary key AUTOINCREMENT,
                             'tree' int(1),
                             'graph' int(1));
 
+create table anothercuotiku (id integer primary key AUTOINCREMENT,
+                            content VARCHAR(255),option_A VARCHAR(255),option_B VARCHAR(255),
+                            option_C VARCHAR(255),option_D VARCHAR(255),correct_ot integer,
+                            explanation VARCHAR(255));
+
 create table queue(id integer primary key AUTOINCREMENT,
                             content VARCHAR(255),option_A VARCHAR(255),option_B VARCHAR(255),
                             option_C VARCHAR(255),option_D VARCHAR(255),correct_ot integer,

@@ -46,11 +46,13 @@
 
     <LinearLayout
         android:id="@+id/second"
+        android:onClick="ChageClick"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:orientation="horizontal"
         android:background="@color/skyblue">
         <ImageView
+            android:id="@+id/avatar"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:src="@drawable/img_12"></ImageView>
@@ -88,6 +90,14 @@
             android:src="@drawable/edit"
             android:layout_alignParentRight="true"
             ></ImageView>
+
+            <EditText
+                android:id="@+id/Myname"
+                android:layout_width="250dp"
+                android:layout_height="70dp"
+                android:ems="10"
+                android:inputType="text"
+                android:text="MyName" />
         </RelativeLayout>
     </LinearLayout>
 
@@ -104,6 +114,13 @@
             android:textSize="20dp"
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"></TextView>
+        <EditText
+            android:id="@+id/MyGrade"
+            android:layout_width="250dp"
+            android:layout_height="70dp"
+            android:ems="10"
+            android:inputType="text"
+            android:text="MyGrade" />
     </LinearLayout>
 
     <LinearLayout
@@ -119,6 +136,13 @@
             android:textSize="20dp"
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"></TextView>
+        <EditText
+            android:id="@+id/MyPlace"
+            android:layout_width="250dp"
+            android:layout_height="70dp"
+            android:ems="10"
+            android:inputType="text"
+            android:text="WhereILive" />
     </LinearLayout>
 
     <ImageView

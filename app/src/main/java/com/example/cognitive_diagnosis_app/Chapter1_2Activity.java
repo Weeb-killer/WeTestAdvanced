@@ -115,7 +115,7 @@ public class Chapter1_2Activity extends Activity {
                             values.put("correct_ot",queuelist.get(i).answer);
                             values.put("explanation",queuelist.get(i).explaination);
 
-                            db.insert("cuotiku",null,values);
+                            db.insert("anothercuotiku",null,values);
                         }
 
                     }

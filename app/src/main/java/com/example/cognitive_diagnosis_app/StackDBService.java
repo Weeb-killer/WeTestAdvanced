@@ -43,7 +43,6 @@ public class StackDBService {
                 ques.selectedAnswer=-1;
                 list.add(ques);
 
-
             }
         }
         return list;
@@ -53,7 +52,7 @@ public class StackDBService {
     @SuppressLint("Range")
     public List<question> getwrongQuestion(){
         List<question> list=new ArrayList<question>();
-        Cursor cursor=db.rawQuery("select * from cuotiku",null);
+        Cursor cursor=db.rawQuery("select * from anothercuotiku",null);
 
         if(cursor.getCount()>0){
             cursor.moveToFirst();

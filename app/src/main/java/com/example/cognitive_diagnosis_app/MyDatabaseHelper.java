@@ -26,10 +26,6 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
     private Context mContext;
     private SQLiteDatabase db;
 
-    public static final String CREATE_Student="create table student("
-            +"id integer primary key autoincrement,"
-            + "stuName text, "
-            + "stuPassword text)" ;
 
 
     public MyDatabaseHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
@@ -47,7 +43,12 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(CREATE_Student);
+        db.execSQL("create table student("
+                +"id integer primary key autoincrement,"
+                + "stuName text, "
+                + "stuPassword text)");
+        //张哥，这是存老师用户的账户和密码表
+        db.execSQL("create table teacher(id integer primary key autoincrement,tecName text,tecPassword text,class VARCHAR(90))");
 
         try {
             InputStream in = mContext.getAssets().open("vip.sql");
@@ -69,7 +70,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         }
 
         //错题库
-        db.execSQL("create table cuotiku (id integer primary key,content VARCHAR(255)," +
+        db.execSQL("create table cuotiku (id integer primary key autoincrement,content VARCHAR(255)," +
                 "option_A VARCHAR(255),option_B VARCHAR(255),option_C VARCHAR(255)," +
                 "option_D VARCHAR(255),correct_ot integer,explanation VARCHAR(255))");
     }
@@ -91,10 +92,22 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
             @SuppressLint("Range") String name = cursor.getString(cursor.getColumnIndex("stuName"));
             @SuppressLint("Range") String password = cursor.getString(cursor.getColumnIndex("stuPassword"));
             list.add(new User(name,password));
-
         }
         return list;
     }
+
+
+    public ArrayList<User> tgetAllData(){
+        ArrayList<User> list=new ArrayList<>();
+        Cursor cursor=db.query("teacher",null,null,null,null,null,"tecName DESC");
+        while(cursor.moveToNext()){
+            @SuppressLint("Range") String name = cursor.getString(cursor.getColumnIndex("tecName"));
+            @SuppressLint("Range") String password = cursor.getString(cursor.getColumnIndex("tecPassword"));
+            list.add(new User(name,password));
+        }
+        return list;
+    }
+
 
     private String readTextFromSDcard(InputStream is) throws Exception {
         InputStreamReader reader = new InputStreamReader(is);

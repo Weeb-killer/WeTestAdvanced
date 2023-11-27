@@ -9,11 +9,13 @@ import android.animation.PropertyValuesHolder;
 import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -28,15 +30,31 @@ public class teacher_register extends Activity implements View.OnClickListener {
     private float mWidth, mHeight;
 
     private LinearLayout mName, mPsw;
+    private Button signUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_teacher_register);
-
         initView();
+
+        signUp=findViewById(R.id.tSignUp);
+
+
+
+
+        signUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(teacher_register.this,teacher_zhuce.class);
+                startActivity(intent);
+            }
+        });
     }
+
+
+
 
     private void initView() {
         mBtnLogin = (TextView) findViewById(R.id.main_btn_login);
@@ -62,16 +80,7 @@ public class teacher_register extends Activity implements View.OnClickListener {
 
     }
 
-    /**
-     * 输入框的动画效果
-     *
-     * @param view
-     *            控件
-     * @param w
-     *            宽
-     * @param h
-     *            高
-     */
+
     private void inputAnimator(final View view, float w, float h) {
 
         AnimatorSet set = new AnimatorSet();
@@ -140,6 +149,8 @@ public class teacher_register extends Activity implements View.OnClickListener {
         animator3.start();
 
     }
+
+
 
 
 }

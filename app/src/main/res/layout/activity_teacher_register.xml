@@ -13,6 +13,7 @@ tools:context=".teacher_register" >
     android:layout_height="50dp" >
 
     <Button
+        android:id="@+id/tSignUp"
         android:layout_width="130dp"
         android:layout_height="match_parent"
         android:textColor="#ffffff"

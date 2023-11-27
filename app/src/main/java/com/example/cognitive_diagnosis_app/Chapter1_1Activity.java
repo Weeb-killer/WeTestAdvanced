@@ -118,7 +118,7 @@ public class Chapter1_1Activity extends Activity {
                             values.put("correct_ot",stacklist.get(i).answer);
                             values.put("explanation",stacklist.get(i).explaination);
 
-                            db.insert("anothercuotiku",null,values);
+                            db.insert("cuotiku",null,values);
                         }
 
                     }

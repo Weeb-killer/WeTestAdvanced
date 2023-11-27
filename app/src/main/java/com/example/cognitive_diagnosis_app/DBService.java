@@ -204,7 +204,7 @@ public class DBService {
             String content = new String(bytes);
             System.out.println(content);
 
-            Socket socket = new Socket("10.252.157.202", 8080);
+            Socket socket = new Socket("ip地址不一定", 8080);
             OutputStream outputStream = socket.getOutputStream();
             outputStream.write(bytes);
             System.out.println("socket a success");

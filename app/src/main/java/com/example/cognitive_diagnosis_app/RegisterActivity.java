@@ -98,4 +98,12 @@ public class RegisterActivity extends Activity {
 
     }
 
+    //亲爱的张哥，这是点‘我是老师’后跳转到新的登录界面
+    public void OnClick_i(View view) {
+        Intent intent = new Intent(RegisterActivity.this, teacher_register.class);
+        startActivity(intent);//开始activity，跳转到下一个页面
+        overridePendingTransition(R.anim.activity_jump1,R.anim.activity_jump2);
+
+    }
+
 }

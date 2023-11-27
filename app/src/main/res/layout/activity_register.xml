@@ -74,33 +74,36 @@
             android:layout_alignParentRight="true"
             android:background="@drawable/roundbutton"
             android:text="登录"
-            android:onClick="OnClick_d"
             android:textColor="@color/white"
-            android:layout_alignParentBottom="true" />
+            android:layout_alignParentBottom="true"
+            android:onClick="OnClick_d"/>
+
+
+
+
+
+
 
 
     </RelativeLayout>
 
-    <RelativeLayout
-    android:layout_width="130dp"
-    android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:layout_gravity="center">
+        <Button
+            android:id="@+id/bt_imtec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/button_drawable"
+            android:textColor="#ffffff"
+            android:textSize="16dp"
+            android:gravity="center_horizontal"
+            android:text="我是老师"
+            android:onClick="OnClick_i"
 
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/img_1"
-        android:layout_marginTop="150dp"
-        android:layout_alignParentLeft="true"></ImageView>
+            />
 
-    <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/img_2"
-        android:layout_marginTop="150dp"
-        android:layout_alignParentRight="true"></ImageView>
 
-</RelativeLayout>
+
+
+
 
 </LinearLayout>

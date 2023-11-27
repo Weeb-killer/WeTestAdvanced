@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -36,6 +37,7 @@
             android:textSize="20dp"></TextView>
 
         <TextView
+            android:onClick="SaveInput"
             android:layout_width="60dp"
             android:layout_height="match_parent"
             android:layout_alignParentRight="true"
@@ -97,7 +99,7 @@
                 android:layout_height="70dp"
                 android:ems="10"
                 android:inputType="text"
-                android:text="MyName" />
+                android:text="@={viewModel.inputText1}" />
         </RelativeLayout>
     </LinearLayout>
 
@@ -120,7 +122,7 @@
             android:layout_height="70dp"
             android:ems="10"
             android:inputType="text"
-            android:text="MyGrade" />
+            android:text="" />
     </LinearLayout>
 
     <LinearLayout
@@ -142,7 +144,7 @@
             android:layout_height="70dp"
             android:ems="10"
             android:inputType="text"
-            android:text="WhereILive" />
+            android:text="" />
     </LinearLayout>
 
     <ImageView

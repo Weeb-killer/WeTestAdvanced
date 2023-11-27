@@ -7,9 +7,11 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModel;
 
 public class EditActivity extends AppCompatActivity {
     private ImageView avatar;
@@ -54,7 +56,6 @@ public class EditActivity extends AppCompatActivity {
         //选择相册界面
         startActivityForResult(intent,1);
     }
-
 
     protected void onActivityResult(int reqC,int resC,Intent data) {
 

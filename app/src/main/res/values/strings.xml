@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Cognitive_diagnosis_app</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="user">待定</string>
+    <string name="home">主页</string>
+    <string name="more">待定</string>
+    
 </resources>

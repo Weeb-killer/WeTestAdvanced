@@ -77,6 +77,10 @@ public class teacher_register extends Activity implements View.OnClickListener {
         mPsw.setVisibility(View.INVISIBLE);
 
         inputAnimator(mInputLayout, mWidth, mHeight);
+        //刘哥 先跳转 登录内容先留白 这里是个后门捏 到时候写好登录了把这里加上就行 ~Weeb-killer
+        Intent intent=new Intent(teacher_register.this, teacherMainActivity.class);
+        startActivity(intent);
+        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
 
     }
 

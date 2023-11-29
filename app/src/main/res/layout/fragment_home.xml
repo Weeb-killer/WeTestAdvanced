@@ -10,24 +10,210 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-
-    >
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="370dp"
-            android:layout_height="317dp"
-            android:layout_gravity="center"
-            android:src="@drawable/teaching" />
-
-        <TextView
-            android:id="@+id/textView2"
+        android:orientation="vertical">
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="您好!老师"
-            android:gravity="center"
-            android:textColor="@color/black"/>
+            android:orientation="vertical"
+            android:background="#FDF5E6"
+            >
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="260dp"
+                android:layout_height="265dp"
+                android:layout_gravity="center"
+                android:background="@drawable/round_corner"
+                android:src="@drawable/teaching" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="您好!老师"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:textColor="@color/black"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/round_corner"
+            android:weightSum="3"
+            >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="105dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="32dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginEnd="3dp"
+                        android:layout_marginStart="3dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_weight="3"
+                        android:src="@drawable/myclass"></ImageView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imageView"
+                    android:text="             班级"
+                    android:layout_centerHorizontal="true"
+                    ></TextView>
+                </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="32dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imageView1"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="3dp"
+                        android:layout_weight="3"
+                        android:src="@drawable/dynm"></ImageView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imageView1"
+                    android:text="              动态"
+                    android:layout_centerHorizontal="true"
+                    ></TextView>
+                </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="32dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_margin="3dp"
+                        android:layout_weight="3"
+                        android:src="@drawable/calling">
+                    </ImageView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imageView3"
+                    android:text="             通讯录"
+                    android:layout_centerHorizontal="true"
+                    ></TextView>
+                </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="105dp"
+                android:orientation="horizontal"
+                android:weightSum="3">
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="32dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        >
+
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_margin="3dp"
+                            android:layout_weight="3"
+                            android:src="@drawable/morethings">
+                        </ImageView>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/imageView5"
+                            android:text="               更多?"
+                            android:layout_centerHorizontal="true"
+                            ></TextView>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    app:cardCornerRadius="32dp"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="5dp"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        >
+
+                        <ImageView
+                            android:id="@+id/imageView6"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="13dp"
+                            android:layout_marginEnd="3dp"
+                            android:layout_marginStart="3dp"
+                            android:layout_marginTop="3dp"
+                            android:layout_weight="3"
+                            android:src="@drawable/problemreport"></ImageView>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/imageView6"
+                            android:text="            问题反馈"
+                            android:layout_centerHorizontal="true"
+                            ></TextView>
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
 
     </LinearLayout>
 

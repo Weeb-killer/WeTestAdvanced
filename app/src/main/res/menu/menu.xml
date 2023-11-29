@@ -14,7 +14,7 @@
 
     <item
         android:id="@+id/item_user"
-        android:icon="@drawable/none"
+        android:icon="@drawable/mymine"
         android:title="@string/user"
         />
 

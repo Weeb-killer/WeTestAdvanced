@@ -1,6 +1,7 @@
 package com.example.cognitive_diagnosis_app;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -16,6 +17,8 @@ import androidx.lifecycle.ViewModel;
 public class EditActivity extends AppCompatActivity {
     private ImageView avatar;
     View Sun,Builing,first,second,third,fourth,fifth;
+
+    Uri imageUri;
     Animation topAnimation,bottomAnimation,middleAnimation;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +45,24 @@ public class EditActivity extends AppCompatActivity {
         Builing.setAnimation(bottomAnimation);
 
         avatar=findViewById(R.id.avatar);
+        SharedPreferences sp = getSharedPreferences("Userdata",MODE_PRIVATE);
+        String myn= sp.getString("myname","");
+        String myclass= sp.getString("myclass","");
+        String myt= sp.getString("myt","");
+        String mya= sp.getString("mya","");
+        EditText myn1 = (EditText) findViewById(R.id.Myname);
+        EditText myclass1 = (EditText) findViewById(R.id.MyGrade);
+        EditText myt1 = (EditText) findViewById(R.id.MyPlace);
+        ImageView avatar= findViewById(R.id.avatar);
+        Uri myav=Uri.parse(mya);
+        if (mya!=null) {
+            avatar.setImageURI(myav);
+        }
+        myn1.setText(myn);
+        myclass1.setText(myclass);
+        myt1.setText(myt);
+
+
     }
     public void eOnclick1(View view){
         Intent intent = new Intent(EditActivity.this,UserActivity.class);
@@ -57,14 +78,29 @@ public class EditActivity extends AppCompatActivity {
         startActivityForResult(intent,1);
     }
 
+    public void SaveInput(View view){//用户保存设定
+        EditText myn1 = (EditText) findViewById(R.id.Myname);
+        EditText myclass1 = (EditText) findViewById(R.id.MyGrade);
+        EditText myt1 = (EditText) findViewById(R.id.MyPlace);
+
+        SharedPreferences sp= getSharedPreferences("Userdata",MODE_PRIVATE);
+
+        SharedPreferences.Editor editor=sp.edit();
+        editor.putString("myname",myn1.getText().toString());
+        editor.putString("myclass",myclass1.getText().toString());
+        editor.putString("myt",myt1.getText().toString());
+        editor.putString("mya",imageUri.toString());
+        editor.commit();
+    }
+
     protected void onActivityResult(int reqC,int resC,Intent data) {
 
         super.onActivityResult(reqC, resC, data);
 
         if (reqC==1&&resC==RESULT_OK&&data!=null){
-            Uri imageUri=data.getData();
-
+            imageUri=data.getData();
             avatar.setImageURI(imageUri);
         }
     }
+
 }

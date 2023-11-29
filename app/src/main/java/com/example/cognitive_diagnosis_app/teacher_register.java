@@ -11,13 +11,18 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class teacher_register extends Activity implements View.OnClickListener {
 
@@ -31,6 +36,9 @@ public class teacher_register extends Activity implements View.OnClickListener {
 
     private LinearLayout mName, mPsw;
     private Button signUp;
+    private MyDatabaseHelper mdb;
+    private EditText tusername,tpassword;
+    private String username,user_password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +46,11 @@ public class teacher_register extends Activity implements View.OnClickListener {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_teacher_register);
         initView();
+
+        mdb=new MyDatabaseHelper(teacher_register.this);
+        mdb.getWritableDatabase();
+        tusername=findViewById(R.id.input_layout_tusername);
+        tpassword=findViewById(R.id.input_layout_tpasw);
 
         signUp=findViewById(R.id.tSignUp);
 
@@ -77,10 +90,51 @@ public class teacher_register extends Activity implements View.OnClickListener {
         mPsw.setVisibility(View.INVISIBLE);
 
         inputAnimator(mInputLayout, mWidth, mHeight);
-        //刘哥 先跳转 登录内容先留白 这里是个后门捏 到时候写好登录了把这里加上就行 ~Weeb-killer
-        Intent intent=new Intent(teacher_register.this, teacherMainActivity.class);
-        startActivity(intent);
-        overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+
+        //张哥 换好了捏 ~trirain
+        username=tusername.getText().toString();
+        user_password=tpassword.getText().toString();
+        Boolean success=false;
+        if (username.isEmpty() || user_password.isEmpty()){
+            Toast.makeText(teacher_register.this, "请输入用户名或密码", Toast.LENGTH_SHORT).show();
+            success=false;
+        }else {
+            ArrayList<User> data=mdb.tgetAllData();
+            for(int i=0;i<data.size();i++){
+                User user=data.get(i);
+                if (username.equals(user.getName()) && user_password.equals(user.getPassword())){
+                    success=true;
+                    break;
+                }else {
+                    success=false;
+                }
+            }
+        }
+        if (success){
+            Toast.makeText(teacher_register.this, "教师端登录成功", Toast.LENGTH_SHORT).show();
+            Intent intent=new Intent(teacher_register.this,teacherMainActivity.class);
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    startActivity(intent);
+
+                }
+            },1000);
+
+            overridePendingTransition(R.anim.fade_in,R.anim.fade_out);
+        }else {
+            Toast.makeText(teacher_register.this, "账号或密码错误", Toast.LENGTH_SHORT).show();
+        }
+
+        //登录失败转五秒后回到初始状态，形成努力加载的错觉
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                recovery();
+
+            }
+        },5000);
+
 
     }
 
@@ -152,6 +206,26 @@ public class teacher_register extends Activity implements View.OnClickListener {
         //animator3.setInterpolator(new JellyInterpolator());
         animator3.start();
 
+    }
+
+
+    //登录失败后动画回到初始状态
+    private void recovery() {
+        progress.setVisibility(View.GONE);
+        mInputLayout.setVisibility(View.VISIBLE);
+        mName.setVisibility(View.VISIBLE);
+        mPsw.setVisibility(View.VISIBLE);
+
+        ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) mInputLayout.getLayoutParams();
+        params.leftMargin = 0;
+        params.rightMargin = 0;
+        mInputLayout.setLayoutParams(params);
+
+
+        ObjectAnimator animator2 = ObjectAnimator.ofFloat(mInputLayout, "scaleX", 0.5f,1f );
+        animator2.setDuration(500);
+        animator2.setInterpolator(new AccelerateDecelerateInterpolator());
+        animator2.start();
     }
 
 

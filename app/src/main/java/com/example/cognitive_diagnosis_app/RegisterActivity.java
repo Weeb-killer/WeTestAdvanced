@@ -56,7 +56,6 @@ public class RegisterActivity extends Activity {
         findViewById(R.id.r).setAnimation(middleAnimation);
         findViewById(R.id.l).setAnimation(middleAnimation);
 
-        MyDatabaseHelper mydatabasehelper=new MyDatabaseHelper(this);
 
         mdb=new MyDatabaseHelper(RegisterActivity.this);
         mdb.getWritableDatabase();

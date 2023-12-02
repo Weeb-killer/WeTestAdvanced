@@ -61,4 +61,10 @@ public class moreFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_more, container, false);
     }
+
+    @Override
+    public void onViewCreated(View view, Bundle saveInstanceState) {
+        super.onViewCreated(view, saveInstanceState);
+        View fragmentView = getView();
+    }
 }

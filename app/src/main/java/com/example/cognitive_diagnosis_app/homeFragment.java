@@ -4,15 +4,19 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.text.TextUtils;
+import android.text.method.LinkMovementMethod;
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.TranslateAnimation;
+import android.widget.EditText;
+import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link homeFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class homeFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -24,6 +28,8 @@ public class homeFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    Animation scolling;
+    TextView tv1;
     public homeFragment() {
         // Required empty public constructor
     }
@@ -45,7 +51,12 @@ public class homeFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_home, container, false);
+    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,10 +66,14 @@ public class homeFragment extends Fragment {
         }
     }
 
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+    public void onViewCreated(View view, Bundle saveInstanceState) {
+        super.onViewCreated(view, saveInstanceState);
+        //获取试图 fragment不继承Activity 所以不能直接使用findViewById
+        View fragmentView=getView();
+        scolling= AnimationUtils.loadAnimation(getActivity().getApplicationContext(),R.anim.text_scolling);
+        tv1=fragmentView.findViewById(R.id.textView2);
+        tv1.setAnimation(scolling);
     }
 }

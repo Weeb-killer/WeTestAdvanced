@@ -7,12 +7,16 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.EditText;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link userFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
+
 public class userFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -24,6 +28,8 @@ public class userFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    Animation topAnimation,bottomAnimation,middleAnimation;
+    View Moon,Builing,first,second,third,fourth,fifth,star;
     public userFragment() {
         // Required empty public constructor
     }
@@ -60,5 +66,29 @@ public class userFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_user, container, false);
+    }
+    @Override
+    public void onViewCreated(View view, Bundle saveInstanceState) {
+        super.onViewCreated(view, saveInstanceState);
+        View fragmentView = getView();
+        topAnimation= AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.top_animation);
+        bottomAnimation= AnimationUtils.loadAnimation(getActivity().getApplicationContext(),R.anim.bottom_animation);
+        middleAnimation= AnimationUtils.loadAnimation(getActivity().getApplicationContext(),R.anim.middle_animation);
+        first=fragmentView.findViewById(R.id.first);
+        second=fragmentView.findViewById(R.id.second);
+        third=fragmentView.findViewById(R.id.third);
+        fourth=fragmentView.findViewById(R.id.fourth);
+        fifth=fragmentView.findViewById(R.id.fifth);
+        Moon=fragmentView.findViewById(R.id.Moon);
+        Builing=fragmentView.findViewById(R.id.building);
+        star=fragmentView.findViewById(R.id.Star);
+        first.setAnimation(topAnimation);
+        second.setAnimation(topAnimation);
+        third.setAnimation(topAnimation);
+        fourth.setAnimation(topAnimation);
+        fifth.setAnimation(topAnimation);
+        Moon.setAnimation(middleAnimation);
+        Builing.setAnimation(bottomAnimation);
+        star.setAnimation(middleAnimation);
     }
 }

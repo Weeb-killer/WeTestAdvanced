@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,75 +19,190 @@
             android:layout_height="wrap_content"
             android:text="请按照要求添加题目" />
 
-        <EditText
-            android:id="@+id/editTextText"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="text"
-            android:text="Name" />
+            android:layout_height="60dp"
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/editTextText2"
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="题干" />
+
+            <EditText
+                android:id="@+id/Qcontent"
+                android:layout_width="299dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="text"
+                android:text="" />
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="text"
-            android:text="Name" />
+            android:layout_height="60dp"
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/editTextText3"
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="选项内容A" />
+
+            <EditText
+                android:id="@+id/QA"
+                android:layout_width="299dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="text"
+                android:text="" />
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="text"
-            android:text="Name" />
+            android:layout_height="60dp"
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/editTextText4"
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="选项内容B" />
+
+            <EditText
+                android:id="@+id/QB"
+                android:layout_width="299dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="text"
+                android:text="" />
+        </LinearLayout><LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="text"
-            android:text="Name" />
+            android:layout_height="60dp"
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/editTextText5"
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="选项内容C" />
+
+            <EditText
+                android:id="@+id/QC"
+                android:layout_width="299dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="text"
+                android:text="" />
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="text"
-            android:text="Name" />
+            android:layout_height="60dp"
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/editTextText6"
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="选项内容D" />
+
+            <EditText
+                android:id="@+id/QD"
+                android:layout_width="299dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="text"
+                android:text="" />
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="text"
-            android:text="Name" />
+            android:layout_height="60dp"
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/editTextText7"
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="正确答案(A就写1)" />
+
+            <EditText
+                android:id="@+id/QRA"
+                android:layout_width="299dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="text"
+                android:text="" />
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="text"
-            android:text="Name" />
+            android:layout_height="60dp"
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/editTextText8"
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="解析" />
+
+            <EditText
+                android:id="@+id/QE"
+                android:layout_width="299dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="text"
+                android:text="" />
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="text"
-            android:text="Name" />
+            android:layout_height="60dp"
+            android:orientation="horizontal">
 
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="知识点(Search_Algorithm,sorting_algorithm,Link_List,Q,S,A,T,G)" />
+
+            <EditText
+                android:id="@+id/KP"
+                android:layout_width="299dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="text"
+                android:text="" />
+        </LinearLayout>
         <Button
-            android:id="@+id/button"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="上传" />
+            android:layout_height="70dp"
+            android:id="@+id/uploadquestion"
+            android:text="确认上传"
+            android:onClick="uploadQ"
+            />
+
+
     </LinearLayout>
 
 </FrameLayout>

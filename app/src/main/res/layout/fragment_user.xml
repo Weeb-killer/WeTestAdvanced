@@ -19,13 +19,6 @@
             android:orientation="horizontal"
             tools:ignore="MissingConstraints">
 
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/return_icon"
-                android:onClick="eOnclick1"
-                tools:ignore="SpeakableTextPresentCheck"
-                ></ImageView>
 
             <TextView
                 android:layout_width="0dp"
@@ -61,7 +54,7 @@
                 android:textSize="20dp"
                 android:text="修改头像"
                 android:layout_gravity="center"
-                android:textColor="@color/skyblue"
+                android:textColor="@color/black"
                 android:layout_marginLeft="10dp"></TextView>
 
         </LinearLayout>

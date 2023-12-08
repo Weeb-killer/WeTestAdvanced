@@ -95,9 +95,10 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         ArrayList<User> list=new ArrayList<>();
         Cursor cursor=db.query("student",null,null,null,null,null,"stuName DESC");
         while(cursor.moveToNext()){
+            @SuppressLint("Range") String id = cursor.getString(cursor.getColumnIndex("id"));
             @SuppressLint("Range") String name = cursor.getString(cursor.getColumnIndex("stuName"));
             @SuppressLint("Range") String password = cursor.getString(cursor.getColumnIndex("stuPassword"));
-            list.add(new User(name,password));
+            list.add(new User(id,name,password));
         }
         return list;
     }
@@ -107,9 +108,10 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         ArrayList<User> list=new ArrayList<>();
         Cursor cursor=db.query("teacher",null,null,null,null,null,"tecName DESC");
         while(cursor.moveToNext()){
+            @SuppressLint("Range") String id = cursor.getString(cursor.getColumnIndex("id"));
             @SuppressLint("Range") String name = cursor.getString(cursor.getColumnIndex("tecName"));
             @SuppressLint("Range") String password = cursor.getString(cursor.getColumnIndex("tecPassword"));
-            list.add(new User(name,password));
+            list.add(new User(id,name,password));
         }
         return list;
     }

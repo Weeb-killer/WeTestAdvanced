@@ -25,6 +25,8 @@ public class RegisterActivity extends Activity {
     private MyDatabaseHelper mdb;
     private User view;
     private Permission permission;
+
+    public static String stuid;
     Animation middleAnimation;
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -74,6 +76,7 @@ public class RegisterActivity extends Activity {
                 User user=data.get(i);
                 if (username.equals(user.getName()) && user_password.equals(user.getPassword())){
                     success=true;
+                    stuid=user.getId();
                     break;
                 }else {
                     success=false;

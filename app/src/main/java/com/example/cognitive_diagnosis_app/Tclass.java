@@ -79,18 +79,19 @@ public class Tclass extends AppCompatActivity {
                         //改下拉列表
                         Cursor cursor=db.query("banjiku",null,null,null,null,null,"teacher_id DESC");
                         int class_num=0;
-                        while(cursor.moveToNext()){
+                        if (cursor.moveToFirst()){
+                            do{
+                                @SuppressLint("Range") String teacher_id = cursor.getString(cursor.getColumnIndex("teacher_id"));
+                                @SuppressLint("Range") String class_name = cursor.getString(cursor.getColumnIndex("class_name"));
 
-                            @SuppressLint("Range") String teacher_id = cursor.getString(cursor.getColumnIndex("teacher_id"));
-                            @SuppressLint("Range") String class_name = cursor.getString(cursor.getColumnIndex("class_name"));
-
-                            if (teacher_id.equals(String.valueOf(teacher_register.cur_teacher_id))){
-                                class_num+=1;
-                                if (class_num>=5){
-                                    add=false;
-                                    Toast.makeText(Tclass.this,"已达到最大创建班级数量",Toast.LENGTH_SHORT).show();
-                                    break;};
-                            }
+                                if (teacher_id.equals(String.valueOf(teacher_register.cur_teacher_id))){
+                                    class_num+=1;
+                                    if (class_num>=5){
+                                        add=false;
+                                        Toast.makeText(Tclass.this,"已达到最大创建班级数量",Toast.LENGTH_SHORT).show();
+                                        break;};
+                                }
+                            }while(cursor.moveToNext());
                         }
                         if (add){
                             ContentValues value=new ContentValues();
@@ -134,15 +135,16 @@ public class Tclass extends AppCompatActivity {
                 for (int i=0;i<5;i++){options[i]="未创建班级";};
                 int position=0;
                 Cursor cursor=db.query("banjiku",null,null,null,null,null,"teacher_id DESC");
-                while(cursor.moveToNext()){
-                    @SuppressLint("Range") String teacher_id = cursor.getString(cursor.getColumnIndex("teacher_id"));
-                    @SuppressLint("Range") String class_name = cursor.getString(cursor.getColumnIndex("class_name"));
-                    if (teacher_id.equals(String.valueOf(teacher_register.cur_teacher_id))){
-                        options[position]=class_name;
-                        position+=1;
-                    }
+                if (cursor.moveToFirst()){
+                    do {
+                        @SuppressLint("Range") String teacher_id = cursor.getString(cursor.getColumnIndex("teacher_id"));
+                        @SuppressLint("Range") String class_name = cursor.getString(cursor.getColumnIndex("class_name"));
+                        if (teacher_id.equals(String.valueOf(teacher_register.cur_teacher_id))){
+                            options[position]=class_name;
+                            position+=1;
+                        }
+                    }while (cursor.moveToNext());
                 }
-
                 adapter.notifyDataSetChanged();
                 cursor.close();
 

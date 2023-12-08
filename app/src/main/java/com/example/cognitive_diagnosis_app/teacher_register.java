@@ -41,7 +41,7 @@ public class teacher_register extends Activity implements View.OnClickListener {
     private String username,user_password;
 
     //这是登录成功的老师的id，其他类调用这个变量来获取id
-    public static int cur_teacher_id;
+    public static String cur_teacher_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

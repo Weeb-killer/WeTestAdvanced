@@ -1,15 +1,16 @@
 package com.example.cognitive_diagnosis_app;
 
 public class User {
-    private int id;
+    private String id;
     private String name,password;
-    public User(String name, String password){
+    public User(String id,String name, String password){
         super();
+        this.id=id;
         this.name=name;
         this.password=password;
     }
-    public  int getId() {return  id;}
-    public void setId(int id) {
+    public  String getId() {return  id;}
+    public void setId(String id) {
         this.id = id;
     }
     public String getName() {

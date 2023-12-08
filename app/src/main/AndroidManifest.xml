@@ -20,6 +20,11 @@
         android:theme="@style/Theme.Cognitive_diagnosis_app"
         tools:targetApi="31">
         <activity
+            android:name=".Sclass"
+            android:exported="false"
+            android:label="@string/title_activity_sclass"
+            android:theme="@style/Theme.Cognitive_diagnosis_app" />
+        <activity
             android:name=".Tclass"
             android:exported="false" />
         <activity

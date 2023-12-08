@@ -6,9 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 
 public class UserActivity extends Activity {
     Animation middleAnimation;
+
+    private Button stuclass;
     protected void onCreate(Bundle savedInstanceState) {
         middleAnimation= AnimationUtils.loadAnimation(this,R.anim.middle_animation);
         super.onCreate(savedInstanceState);
@@ -16,7 +19,18 @@ public class UserActivity extends Activity {
         findViewById(R.id.wronganswer).setAnimation(middleAnimation);
         findViewById(R.id.uploadquestion).setAnimation(middleAnimation);
         findViewById(R.id.knowledge).setAnimation(middleAnimation);
+        findViewById(R.id.stuclass).setAnimation(middleAnimation);
+        stuclass=findViewById(R.id.stuclass);
+
+        stuclass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(UserActivity.this,Sclass.class);
+                startActivity(intent);
+            }
+        });
     }
+
     public void editOnclick(View view){
         Intent intent = new Intent(UserActivity.this, EditActivity.class);
         startActivity(intent); // 刚开始漏了
@@ -52,5 +66,7 @@ public class UserActivity extends Activity {
         startActivity(intent);//开始activity，跳转到下一个页面
         overridePendingTransition(R.anim.activity_jump1,R.anim.activity_jump2);
     }
+
+
 
 }

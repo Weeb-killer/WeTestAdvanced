@@ -40,6 +40,9 @@ public class teacher_register extends Activity implements View.OnClickListener {
     private EditText tusername,tpassword;
     private String username,user_password;
 
+    //这是登录成功的老师的id，其他类调用这个变量来获取id
+    public static int cur_teacher_id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -104,6 +107,7 @@ public class teacher_register extends Activity implements View.OnClickListener {
                 User user=data.get(i);
                 if (username.equals(user.getName()) && user_password.equals(user.getPassword())){
                     success=true;
+                    cur_teacher_id=user.getId();
                     break;
                 }else {
                     success=false;

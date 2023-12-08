@@ -41,15 +41,21 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    //为了空间换时间，学生暂时只能同时加入五个班，从此只能增加，难以无限
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table student("
                 +"id integer primary key autoincrement,"
                 + "stuName text, "
-                + "stuPassword text)");
+                + "stuPassword text,class1 integer, class2 integer,class3 integer,class4 integer,class5 integer)");
         //张哥，这是存老师用户的账户和密码表
-        db.execSQL("create table teacher(id integer primary key autoincrement,tecName text,tecPassword text,class VARCHAR(90))");
+        //为了空间换时间以及避免不必要的麻烦，老师只能同时拥有五个班，可以轻易增加，难以变为无限
+        db.execSQL("create table teacher(id integer primary key autoincrement,tecName text,tecPassword text,class VARCHAR(90),class1 integer,class2 integer,class3 integer,class4 integer,class5 integer)");
 
+        //存放班级的表,一个班级暂定只有十个学生
+        db.execSQL("create table banjiku(id integer primary key autoincrement,class_name VARCHAR(255)," +
+                "teacher_id integer,stuid1 integer,stuid2 integer," +
+                "stuid3 integer,stuid4 integer,stuid5 integer,stuid6 integer,stuid7 integer,stuid8 integer,stuid9 integer,stuid10 integer)");
         try {
             InputStream in = mContext.getAssets().open("vip.sql");
             String sqlUpdate = null;

@@ -1,5 +1,6 @@
 package com.example.cognitive_diagnosis_app;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -15,6 +16,7 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.TranslateAnimation;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class homeFragment extends Fragment {
@@ -27,6 +29,7 @@ public class homeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private ImageView banji;
 
     Animation scolling;
     TextView tv1;
@@ -60,11 +63,17 @@ public class homeFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
     }
+
+
 
 
     @Override
@@ -75,5 +84,14 @@ public class homeFragment extends Fragment {
         scolling= AnimationUtils.loadAnimation(getActivity().getApplicationContext(),R.anim.text_scolling);
         tv1=fragmentView.findViewById(R.id.textView2);
         tv1.setAnimation(scolling);
+
+        banji=fragmentView.findViewById(R.id.imageView);
+        banji.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(),Tclass.class);
+                startActivity(intent);
+            }
+        });
     }
 }

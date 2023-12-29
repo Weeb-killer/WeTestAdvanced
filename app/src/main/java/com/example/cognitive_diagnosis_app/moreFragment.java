@@ -112,7 +112,6 @@ public class moreFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle saveInstanceState) {
         super.onViewCreated(view, saveInstanceState);
-
     }
 
 }
